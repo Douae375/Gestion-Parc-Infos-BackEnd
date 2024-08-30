@@ -17,7 +17,7 @@ public class DepartementController {
         this.departementService = departementService;
     }
 
-    // Créer un nouveau département
+
     @PostMapping
     public ResponseEntity<DepartementDTO> createDepartement(@RequestBody DepartementDTO departementDTO) {
         DepartementDTO createdDepartement = departementService.createDepartement(departementDTO);
