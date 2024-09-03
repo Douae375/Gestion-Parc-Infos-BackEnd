@@ -13,7 +13,7 @@ public class Departement {
 
     private String nom;
 
-    @OneToMany(mappedBy = "departement", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "departement", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Users> utilisateurs;
 
 }

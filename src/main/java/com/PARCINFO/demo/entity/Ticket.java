@@ -18,11 +18,12 @@ public class Ticket {
     private Date date;
     private String description;
     private String statut;
-    @ManyToOne
+
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "equipement_serie")
     private Equipement equipement;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "user_id")
     private Users user;
 }
