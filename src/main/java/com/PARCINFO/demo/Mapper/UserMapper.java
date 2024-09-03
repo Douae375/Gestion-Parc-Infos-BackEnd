@@ -52,7 +52,7 @@ public class UserMapper implements EntityMapper<Users, UserDTO> {
 
         if (dto.getDepartementId() != null) {
             Departement departement = departementRepository.findById(dto.getDepartementId())
-                    .orElseThrow(() -> new RuntimeException("Departement not found"));
+                    .orElseThrow(() -> new RuntimeException("Departements not found"));
             user.setDepartement(departement);
         }
 
