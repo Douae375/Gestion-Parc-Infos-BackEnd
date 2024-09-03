@@ -27,7 +27,9 @@ public class EquipementMapper implements EntityMapper<Equipement, EquipementDTO>
     @Override
     public Equipement toEntity(EquipementDTO dto) {
         Equipement equipement=new Equipement();
-        equipement.setSerie(dto.getSerie());
+        if (dto.getSerie() != null) {
+            equipement.setSerie(dto.getSerie());
+        }
         equipement.setType(dto.getType());
         equipement.setModele(dto.getModele());
         equipement.setDateAchat(dto.getDateAchat());

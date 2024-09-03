@@ -3,28 +3,15 @@ package com.PARCINFO.demo.dto;
 public class UserDTO {
     private Integer id;
     private String username;
-
     private String password;
-
     private String role;
-
     private String email;
+    private Integer departementId; // Only departementId is passed
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
+    // Getters and setters
     public Integer getId() {
         return id;
     }
-
-    public UserDTO() {
-    }
-
 
     public void setId(Integer id) {
         this.id = id;
@@ -54,11 +41,19 @@ public class UserDTO {
         this.role = role;
     }
 
-    public UserDTO(Integer id, String username, String password, String role, String email) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.role = role;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Integer getDepartementId() {
+        return departementId;
+    }
+
+    public void setDepartementId(Integer departementId) {
+        this.departementId = departementId;
     }
 }

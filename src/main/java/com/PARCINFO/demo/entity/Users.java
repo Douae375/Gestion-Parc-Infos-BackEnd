@@ -25,7 +25,6 @@ public class Users {
 
     private String name;
     private String password;
-    private String city;
 
     @Column(nullable = false)
     private String role;

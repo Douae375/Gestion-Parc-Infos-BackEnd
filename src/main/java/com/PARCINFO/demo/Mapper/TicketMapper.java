@@ -28,7 +28,10 @@ public class TicketMapper implements EntityMapper <Ticket, TicketDTO> {
     @Override
     public Ticket toEntity(TicketDTO dto) {
         Ticket entity = new Ticket();
-        entity.setId(dto.getId());
+        // Do not set the ID here unless you're updating an existing entity
+        if (dto.getId() != null) {
+            entity.setId(dto.getId());
+        }
         entity.setDate(dto.getDate());
         entity.setType(dto.getType());
         entity.setEquipement(dto.getEquipement());
@@ -37,6 +40,7 @@ public class TicketMapper implements EntityMapper <Ticket, TicketDTO> {
         entity.setStatut(dto.getStatut());
         return entity;
     }
+
 
     @Override
     public List<Ticket> toEntities(List<TicketDTO> dtos) {
